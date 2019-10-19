@@ -1,0 +1,8 @@
+﻿Create view HW.Q0
+With ENCRYPTION
+as
+SELECT [Name], AVG(Rating) AS AvgRating
+FROM AdventureWorks2014.Production.Product P JOIN AdventureWorks2014.Production.ProductReview R ON
+P.ProductIO=R.ProductID
+WHERE Listprice > 1000
+GROUP BY R.ProductID, [Name]
